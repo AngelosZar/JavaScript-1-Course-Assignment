@@ -3,8 +3,6 @@
 import { baseApiUrl } from "./common.mjs";
 import { rainyProdEndPoints } from "./common.mjs";
 import { doFetchData } from "./common.mjs";
-import { addToCart } from "./cart.mjs";
-import { createCart } from "./cart.mjs";
 // Create html for product cards
 // Display the generated cards
 // Create a cart / local storage
@@ -13,9 +11,44 @@ import { createCart } from "./cart.mjs";
 // empty the cart
 // Generate HTML /nest it in display html function
 //
+//         cart functions
+function createCart() {
+  // why not single quote//check if wrong
+  // const cart = JSON.parse(localStorage.getItem("cart"));
+  const cart = localStorage.getItem("cart");
+  // console.log("cart", cart);
+  if (!cart) {
+    localStorage.setItem("cart", JSON.stringify([]));
+  }
+}
+//
+function addToCart(raincoat) {
+  console.log("added to cart", raincoat);
+  const cart = JSON.parse(localStorage.getItem("cart"));
+  const indexOfProd = cart.findIndex(function (currentProd) {
+    console.log("currentProd");
+    if (raincoat.id === currentProd.id) {
+      return true;
+    } else {
+      return false;
+    }
+  });
+  if (indexOfProd === -1) {
+    cart.push({ ...raincoat, quantity: 1 });
+  } else {
+    cart[indexOfProd].quantity++;
+  }
+  console.log("indexOfProd", indexOfProd);
+  // cart.push(raincoat);
+  localStorage.setItem("cart", JSON.stringify(cart));
+  //   console.log(cart);
+}
+//         cart functions
+//
 function genProdHtml(raincoat) {
   //    ------- variables -------
-  const prodCardContainer = document.createElement("section");
+  // console.log(raincoat);
+  const prodCardContainer = document.createElement("div");
   const productCard = document.createElement("div");
   const imgContForCard = document.createElement("div");
   const textContainer = document.createElement("div");
@@ -42,7 +75,7 @@ function genProdHtml(raincoat) {
   // Change the int of price to num
   productPrice.textContent = raincoat.price;
   //       ------- styles/classes and ids -------
-  prodCardContainer.classList.add("content-container");
+  prodCardContainer.classList.add("#content-container");
   productCard.classList.add("card");
   imgContForCard.classList.add("card-image");
   textContainer.classList.add("card-text-field");
@@ -52,6 +85,7 @@ function genProdHtml(raincoat) {
   //       ------- append and return -------
 
   // if appending is correct like nesting on the original html?
+  imgContForCard.append(productImg);
   textContainer.append(productTtl, productDescription, productPrice, buyItem);
   productCard.append(imgContForCard, textContainer);
   prodCardContainer.append(productCard);
@@ -72,14 +106,15 @@ function displayRainCoatsLi(rainCoats) {
 // 3. For Her
 
 // Initialize the site
-async function init() {
+async function initHomePage() {
   createCart();
   try {
     const { data: rainCoats } = await doFetchData(rainyProdEndPoints);
     // const rainCoats = { data: rainCoats }.data;
     displayRainCoatsLi(rainCoats);
   } catch (error) {
-    console.error();
+    console.log(error);
+    throw new Error(error);
   }
 }
-init();
+initHomePage();

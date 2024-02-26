@@ -209,18 +209,6 @@ fieldset {
   /* padding: 0 5; */
 }
 /* ------------------------------------ ** product cards ** ----------------- */
-/* .content-container {
-    width: 100%;
-    max-width: var(--body-width);
-    display: flex;
-    justify-content: center;
-}
-
-.content-container a {
-    text-decoration: none;
-    justify-content: space-between;
-}
- */
 
 .card {
   /* max-width: 35%; */
