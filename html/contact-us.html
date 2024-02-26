@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rainy days-contact us</title>
+    <meta
+      name="Rainy Days"
+      content="contact us at rainy days-email and online form"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500&family=Roboto:ital,wght@0,400;0,500;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../stylesheets/index.css" />
+    <script
+      src="https://kit.fontawesome.com/aea85badd7.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <header>
+      <a href="../index.html">
+        <img
+          src="../all_Logos/Logos/RainyDays_Logo.png"
+          alt="Rainy days logo"
+        />
+      </a>
+      <label for="menu-checkbox"><i class="fa-solid fa-bars fa-2x"></i></label>
+      <input type="checkbox" name="" id="menu-checkbox" />
+      <nav>
+        <ul class="menu">
+          <a href="forHim-forHer.html">
+            <li>For him</li>
+          </a>
+          <a href="forHim-forHer.html">
+            <li class="current-page">For her</li>
+          </a>
+          <a href="contact-us.html">
+            <li>Contact us</li>
+          </a>
+          <!-- ::Before here for rain jacket png -->
+          <a href="about-us.html">
+            <li>About us</li>
+          </a>
+          <a href="checkout-page.html">
+            <li>My cart</li>
+          </a>
+        </ul>
+      </nav>
+    </header>
+    <!-- ------------------------------------ Header --------------------------- -->
+    <main class="contact-us-body">
+      <div class="two-column">
+        <div class="column-left contact-us-p">
+          <div class="feedback-text">
+            <h1>We love feedback</h1>
+            <h5>Send us an email at support@rainydays.com</h5>
+            <h5>or</h5>
+            <h5>Submit a request or complain at our service team.</h5>
+          </div>
+        </div>
+
+        <form action="" method="post">
+          <div class="contact-us-fieldset"></div>
+          <fieldset>
+            <label for="name" class="label-cOntaCt-us"
+              >Personal information</label
+            >
+            <input
+              type="text"
+              name="Name"
+              id="name"
+              required
+              placeholder="First name "
+              class="textInput-contact"
+            />
+            <br />
+            <input
+              type="text"
+              name="Last name"
+              id="last-name"
+              required
+              placeholder="Last name "
+              class="textInput-contact"
+            />
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Email adress"
+              class="textInput-contact"
+              required
+            />
+            <input
+              type="tel"
+              name="telephon-nr"
+              id="telephon-nr"
+              class="textInput-contact"
+              placeholder="Phone number"
+            />
+            <label for="contactReason" class="label-cOntaCt-us"
+              >Reason for contacting us</label
+            >
+            <input
+              list="contact-reason"
+              id="contactReason"
+              name="contactReason"
+              class="textInput-contact"
+            />
+            <datalist id="contact-reason" class="textInput-contact">
+              <option value="Returns"></option>
+              <option value="Ask a refund"></option>
+              <option value="Other"></option>
+            </datalist>
+
+            <label for="input-text" class="label-cOntaCt-us">Description</label>
+            <textarea
+              id="input-text"
+              name="users-input"
+              rows="4"
+              cols="30"
+              placeholder="Dear awesome team"
+              minlength="10"
+              maxlength="50"
+              class="textInput-contact"
+            >
+            </textarea>
+            <!-- button or input submit is better -->
+            <input type="submit" value="Submit" class="primary-button" />
+          </fieldset>
+        </form>
+      </div>
+    </main>
+
+    <section class="block-contact-us">
+      <h2 class="social-block-text">Share your thoughts with us</h2>
+      <div class="social-media-logos">
+        <br />
+        <a href=""
+          ><img src="../all_Logos/Social media/facebook.png" alt="facebook"
+        /></a>
+        <a href=""
+          ><img src="../all_Logos/Social media/pinterest.png" alt="pinterest"
+        /></a>
+        <a href=""
+          ><img src="../all_Logos/Social media/instagram.png" alt="instagram"
+        /></a>
+      </div>
+    </section>
+
+    <footer>
+      <div class="left-footer">
+        <img src="../all_Logos/Logos/Rainy Days.png" alt="rainy days logo" />
+        <div class="copyright">
+          <ul>
+            <li>&copy; 2023 ALL RIGHTS RESERVED</li>
+            <li>Terms & conditions</li>
+            <li>Privacy policy</li>
+            <li>Cookie policy</li>
+          </ul>
+        </div>
+        <div class="payment-logos">
+          <img
+            src="../all_Logos/Payment/paypal-color-icon 1.png"
+            alt="Paypal"
+          />
+          <img src="../all_Logos/Payment/visa-icon 1.png" alt="Visa" />
+          <img
+            src="../all_Logos/Payment/apple-pay-icon 1.png"
+            alt="Apple pay"
+          />
+          <img
+            src="../all_Logos/Payment/master-card-icon 1.png"
+            alt="Mastercard"
+          />
+          <img src="../all_Logos/Payment/Vipps-Logo 1.png" alt="Vipps" />
+        </div>
+      </div>
+      <div class="right-footer">
+        <div class="services-company-container">
+          <div class="services-company1">
+            <ul>
+              <li class="s&c-heading">Services</li>
+              <li>Shipping</li>
+              <li>Returns</li>
+              <li>Warranty</li>
+            </ul>
+          </div>
+          <div class="services-company1">
+            <ul>
+              <li class="s&c-heading">Company</li>
+              <li>About</li>
+              <li>Reach us</li>
+              <li>Career</li>
+            </ul>
+          </div>
+        </div>
+        <div class="social-on-footer">
+          <h6>Follow us</h6>
+          <h6>For more adventures</h6>
+          <div class="social-media-logos-footer">
+            <a href=""
+              ><img src="../all_Logos/Social media/facebook.png" alt="facebook"
+            /></a>
+            <a href=""
+              ><img
+                src="../all_Logos/Social media/pinterest.png"
+                alt="pinterest"
+            /></a>
+            <a href=""
+              ><img
+                src="../all_Logos/Social media/instagram.png"
+                alt="instagram"
+            /></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

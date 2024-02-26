@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rainy days-checkout</title>
+    <meta name="Rainy Days" content="checkout page-pay now for you product ">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500&family=Roboto:ital,wght@0,400;0,500;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../stylesheets/index.css">
+    <script src="https://kit.fontawesome.com/aea85badd7.js" crossorigin="anonymous"></script>
+    <script type="module" src="../scripts/common.mjs"></script>
+    <script type="module" src="../scripts/checkoutPage.mjs"></script>
+    <script type="module" src="../scripts/cart.mjs"></script>
+</head>
+
+<body>
+    <!-- ------------------------------------ Header --------------------------- -->
+    <header>
+        <a href="../index.html">
+            <img src="../all_Logos/Logos/RainyDays_Logo.png" alt="Rainy days logo">
+        </a>
+        <label for="menu-checkbox"><i class="fa-solid fa-bars fa-2x"></i></label>
+        <input type="checkbox" name="" id="menu-checkbox">
+        <nav>
+            <ul class="menu">
+                <a href="forHim-forHer.html">
+                    <li>For him</li>
+                </a>
+                <a href="forHim-forHer.html">
+                    <li class="current-page">For her</li>
+                </a>
+                <a href="contact-us.html">
+                    <li> Contact us</li>
+                </a>
+                <!-- ::Before here for rain jacket png -->
+                <a href="about-us.html">
+                    <li> About us</li>
+                </a>
+                <a href="checkout-page.html">
+                    <li> My cart</li>
+                </a>
+            </ul>
+        </nav>
+    </header>
+    <!-- check if have i hAvereused this nAme  -->
+    <main class="main-checkout-page">
+        <div class="form-container">
+            <form action="" method="post">
+                <!-- <form action="buy-product-success.php" method="post"> -->
+                <fieldset>
+                    <div class="vipps-payment">
+
+                        <!-- Vipps link just added in a form  -->
+                        <!-- <form action="express-checkout.php" method="post" class="express-checkout-container"> -->
+                        <h2>Express checkout</h2>
+                        <a href="checkout-success.html"><img src="../all_Logos/Payment/vipps_logo_rgb.png"
+                                alt="Vipps logo" class="Vipps-Logo-checkout"></a>
+                    </div>
+                    <h6 class="checkout-headings">Contact Information</h6>
+                    <input type="email" class="textInput-contact" name="users-email" id="" required
+                        placeholder="Email adress " pattern="@gmail.com" title="Please enter a valid email address">
+                    <input type="tel" class="textInput-contact" name="users-tel-Nr" id="" required
+                        placeholder="Phone number ">
+                    <br>
+                    <input type="checkbox" class="check-blocK" name="newsletter-agreement" id="newsletter-agreement"
+                        checked>
+                    <label for="newsletter-agreement" class="check-blocK">Email me with news and offers </label>
+                    <br>
+                    <input type="checkbox" class="check-blocK" name="info-save" id="info-save" checked>
+                    <label for="info-save" class="check-blocK">Save information for next time</label>
+
+
+                    <h6 class="checkout-headings">Shipping information</h6>
+
+                    <select name="country" id="country-selector" class="textInput-contact">
+                        <option value="country-selector">Norway</option>
+                        <option value="country-selector">Sweden</option>
+                        <option value="country-selector">Denmark</option>
+                        <option value="country-selector">Finland</option>
+                        <option value="country-selector">Iceland</option>
+                    </select>
+                    <input type="text" name="full-name" id="" placeholder="Full name " class="textInput-contact">
+                    <input list="city" id="users-city" name="users-city" placeholder="City" class="textInput-contact">
+                    <!-- <label for="users-city"></label> -->
+                    <!-- <datalist id="users-city" placeholder="Full name ">
+                    <option value="Oslo">Oslo</option>
+                    <option value="Bergen">Bergen</option>
+                    <option value="Stavanger">Stavanger</option>
+                    <option value="Tromsø">Tromsø</option>
+                    <option value="Other">Other</option>
+                </datalist> -->
+                    <input type="text" name="postal-code" id="postal-code" placeholder="Postal code"
+                        class="textInput-contact">
+                    <div class="Card-info-flex">
+                        <h6 class="checkout-headings">Card information</h6>
+                        <!-- how to set pattern to be 12 digits and space every four -->
+                        <!-- -----------date-year patter -----cvc pattern  validations??? -->
+                        <input type="number" name="card-number" id="card-number" placeholder="0000 0000 0000 0000"
+                            pattern="" class="textInput-contact">
+                        <div class="month-cvc"><input type="month" name="date-year" id="date-year"
+                                class="textInput-contact half">
+                            <!-- <span class="spAcing-span"></span> -->
+                            <input type="tel" name="card-number-cvc" id="card-number-cvc" placeholder="cvc" pattern=""
+                                class="textInput-contact half" maxlength="3">
+                        </div>
+                        <div>
+                            <img src="../all_Logos/Payment/master-card-icon 1.png" alt="Mastercard logo"
+                                class="imgs-payment">
+                            <img src="../all_Logos/Payment/visa-icon 1.png" alt="visa logo" class="imgs-payment">
+                        </div>
+                        <a href="checkout-success.html" class="primary-button b-small">Buy now
+                            <!-- <input type="submit" value="Buy" class="primary-button b-small"> --> </a>
+                </fieldset>
+            </form>
+        </div>
+
+     <section class="order-review">
+        <div  id="cartCont">
+            <h2>Order review</h2>
+            <hr>
+            <!-- <div class="check-outbox" id="singleCartCheckoutProd">
+                <img src="" alt="" id="checkOutProdImg">
+                <div class="check-outbox2">
+                    <p id="prodQuant"></p>
+                    <p class="product-ttl" id="prodTtl"></p>
+                    <p class="product-price" id="prodPrice"></p>
+                </div>
+            </div>
+        
+            <hr>
+            <form action="apply-promoCode.php" class="apply-promoCode">
+                <input type="text" class="textInput-contact half" placeholder="Add code">
+                <input type="submit" value="Apply promo code" class="primary-button b-promo">
+            </form>
+            <hr>
+            <div id="cartCalculations">
+            <div class="sub">
+                <h6 class="inline-h6" >Subtotal</h6>
+                <h6 class="inline-h6" class="total-Pay">Kr 2500</h6>
+                <h6 class="inline-h6">Shipping</h6>
+                <h6 class="inline-h6">Free</h6>
+            </div>
+            <hr>
+            <div class="total">
+                <h6 class="inline-h6" >Total</h6>
+                <h6 class="inline-h6" class="total-Pay">Kr 2500</h6>
+                <p>Including 25% vat</p>
+            </div> -->
+        </div>
+    </section>
+    </main>
+    <footer>
+
+        <div class="left-footer">
+
+            <img src="../all_Logos/Logos/Rainy Days.png" alt="Rainy Days Logo">
+            <div class="copyright">
+                <ul>
+                    <li>&copy; 2023 ALL RIGHTS RESERVED</li>
+                    <li>Terms & conditions</li>
+                    <li>Privacy policy</li>
+                    <li>Cookie policy</li>
+                </ul>
+            </div>
+            <div class="payment-logos">
+                <img src="../all_Logos/Payment/paypal-color-icon 1.png" alt="Paypal">
+                <img src="../all_Logos/Payment/visa-icon 1.png" alt="Visa">
+                <img src="../all_Logos/Payment/apple-pay-icon 1.png" alt="Apple pay">
+                <img src="../all_Logos/Payment/master-card-icon 1.png" alt="Mastercard">
+                <img src="../all_Logos/Payment/Vipps-Logo 1.png" alt="Vipps">
+            </div>
+        </div>
+        <div class="right-footer">
+            <div class="services-company-container">
+                <div class="services-company1">
+                    <ul>
+                        <li class="s&c-heading">Services</li>
+                        <li>Shipping</li>
+                        <li>Returns</li>
+                        <li>Warranty</li>
+                    </ul>
+                </div>
+                <div class="services-company1">
+                    <ul>
+                        <li class="s&c-heading">Company</li>
+                        <li>About</li>
+                        <li>Reach us</li>
+                        <li>Career</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="social-on-footer">
+                <h6>Follow us</h6>
+                <h6>For more adventures</h6>
+                <div class="social-media-logos-footer">
+                    <a href=""><img src="../all_Logos/Social media/facebook.png" alt="facebook"></a>
+                    <a href=""><img src="../all_Logos/Social media/pinterest.png" alt="pinterest"></a>
+                    <a href=""><img src="../all_Logos/Social media/instagram.png" alt="instagram"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
