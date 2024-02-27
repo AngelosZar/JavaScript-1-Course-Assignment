@@ -1,3 +1,4 @@
+import { cartSum } from "./checkoutPage.mjs";
 export function createCart() {
   // why not single quote//check if wrong
   // const cart = JSON.parse(localStorage.getItem("cart"));
@@ -30,7 +31,6 @@ export function addToCart(raincoat) {
 export function deleteFromCart(raincoat) {
   let cart = JSON.parse(localStorage.getItem("cart"));
   const prodIdToRemove = raincoat.id;
-
   const idInCart = cart.findIndex((currentProduct) => {
     if (currentProduct.id === prodIdToRemove) {
       return true;

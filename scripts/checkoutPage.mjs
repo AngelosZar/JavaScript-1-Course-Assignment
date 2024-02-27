@@ -2,10 +2,7 @@
 import { createCart, emptyCart, addToCart, deleteFromCart } from "./cart.mjs";
 import { formatCurrency } from "./common.mjs";
 //
-const emptyCart_btn = document.querySelector("#empty-cart-btn");
-emptyCart_btn.addEventListener("click", () => {
-  emptyCart();
-});
+
 //
 function genHtmlCartProd(raincoat) {
   //displayCartContainer
@@ -58,27 +55,16 @@ function genHtmlCartProd(raincoat) {
   return singleCartCard;
 }
 //
-{
-  /* <div id="cartCalculations">
-            <div class="sub">
-                <h6 class="inline-h6">Subtotal</h6>
-                <h6 class="inline-h6" id="cart-subtotal" >Kr 2500</h6>
-                <h6 class="inline-h6">Shipping</h6>
-                <h6 class="inline-h6">Free</h6>
-            </div>
-            <hr>
-            <div class="total">
-                <h6 class="inline-h6" >Total</h6>
-                <h6 class="inline-h6" id="cart-total" >Kr 2500</h6>
-                <p>Including 25% vat</p>
-                <button class="primary-button" id="empty-cart-btn">Empty Cart</button>
-            </div> */
-}
-const cartCalculations = document.querySelector("#cartCalculations");
+
+// const cartCalculations = document.querySelector("#cartCalculations");
 const cartSubtotal = document.querySelector("#cart-subtotal");
 cartSubtotal.textContent = "subtotal yey";
 const cartTotal = document.querySelector("#cart-total");
-cartTotal.textContent = "total ye";
+cartTotal.textContent = `TotalNumOfProdInCart`;
+const emptyCart_btn = document.querySelector("#empty-cart-btn");
+emptyCart_btn.addEventListener("click", () => {
+  emptyCart();
+});
 //
 function displayCartProd() {
   const displayCartContainer = document.querySelector("#cartCont");
@@ -94,10 +80,19 @@ function displayCartProd() {
   });
 }
 
+//
+export function cartSum() {
+  const cart = JSON.parse(localStorage.getItem("cart"));
+  const TotalNumOfProdInCart = cart.reduce((total, product) => {
+    total += product.price + product.quantity;
+    console.log(total);
+    return total;
+  }, 0);
+}
+
 function initCheckoutpage() {
   displayCartProd();
   console.log("kinda working");
   //   //   renderCart();
 }
 initCheckoutpage();
-//
