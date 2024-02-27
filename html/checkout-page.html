@@ -15,8 +15,8 @@
     <script src="https://kit.fontawesome.com/aea85badd7.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script type="module" src="../scripts/common.mjs"></script>
-    <script type="module" src="../scripts/checkoutPage.mjs"></script>
     <script type="module" src="../scripts/cart.mjs"></script>
+    <script type="module" src="../scripts/checkoutPage.mjs"></script>
     <!-- <script type="module" src="../scripts/homepage.mjs"></script> -->
 </head>
 
@@ -122,16 +122,10 @@
         </div>
 
      <section class="order-review">
-        <div  id="cartCont">
-            <!-- <h2>Order review</h2>
+        <div>   <h2>Order review</h2>
             <hr>
-            <div class="check-outbox" id="singleCartCheckoutProd">
-                <img src="" alt="" id="checkOutProdImg">
-                <div class="check-outbox2">
-                    <p id="prodQuant"></p>
-                    <p class="product-ttl" id="prodTtl"></p>
-                    <p class="product-price" id="prodPrice"></p>
-                </div>
+            <div  id="cartCont"> </div>
+            <div  id="singleCartCheckoutProd">
             </div>
             <hr>
             <div id="cartCalculations">
@@ -146,8 +140,9 @@
                 <h6 class="inline-h6" >Total</h6>
                 <h6 class="inline-h6" class="total-Pay">Kr 2500</h6>
                 <p>Including 25% vat</p>
-            </div> -->
-        </div>
+                <button class="primary-button" id="empty-cart-btn">Empty Cart</button>
+            </div>
+       
         <hr>
         <form action="apply-promoCode.php" class="apply-promoCode">
             <input type="text" class="textInput-contact half" placeholder="Add code">

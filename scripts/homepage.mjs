@@ -3,6 +3,8 @@
 import { baseApiUrl } from "./common.mjs";
 import { rainyProdEndPoints } from "./common.mjs";
 import { doFetchData } from "./common.mjs";
+import { createCart } from "./cart.mjs";
+import { addToCart } from "./cart.mjs";
 // Create html for product cards
 // Display the generated cards
 // Create a cart / local storage
@@ -12,37 +14,7 @@ import { doFetchData } from "./common.mjs";
 // Generate HTML /nest it in display html function
 //
 //         cart functions
-function createCart() {
-  // why not single quote//check if wrong
-  // const cart = JSON.parse(localStorage.getItem("cart"));
-  const cart = localStorage.getItem("cart");
-  // console.log("cart", cart);
-  if (!cart) {
-    localStorage.setItem("cart", JSON.stringify([]));
-  }
-}
-//
-function addToCart(raincoat) {
-  console.log("added to cart", raincoat);
-  const cart = JSON.parse(localStorage.getItem("cart"));
-  const indexOfProd = cart.findIndex(function (currentProd) {
-    console.log("currentProd");
-    if (raincoat.id === currentProd.id) {
-      return true;
-    } else {
-      return false;
-    }
-  });
-  if (indexOfProd === -1) {
-    cart.push({ ...raincoat, quantity: 1 });
-  } else {
-    cart[indexOfProd].quantity++;
-  }
-  console.log("indexOfProd", indexOfProd);
-  // cart.push(raincoat);
-  localStorage.setItem("cart", JSON.stringify(cart));
-  //   console.log(cart);
-}
+
 //         cart functions
 //
 function genProdHtml(raincoat) {
@@ -63,7 +35,6 @@ function genProdHtml(raincoat) {
     console.log("id", raincoat.id);
     addToCart(raincoat);
   });
-  //                  insert image how?
   const productImg = document.createElement("img");
   // how to get the image????
   productImg.src = raincoat.image.url;
