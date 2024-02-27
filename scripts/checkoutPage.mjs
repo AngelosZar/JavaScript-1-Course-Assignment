@@ -1,35 +1,31 @@
-// //
-// function genHtmlCartProd() {}
-// //
-// //
-// function displayCartProd() {
-//   displayCartProd = document.querySelector("#cartCont");
-//   const cart = JSON.parse(localStorage.getItem("cart"));
-//   cart.forEach((currentProd) => {
-//     const productCard = genHtmlCartProd(raincoat);
-//     displayCartProd.appendChild(productCard);
-//   });
-//   console.log("cart", cart);
-//   console.log("working here as weel ");
-// }
-// function initCheckoutpage() {
-//   console.log("kinda working");
-//   //   renderCart();
-// }
-// initCheckoutpage();
-// displayCartProd();
-
-//
-//
 function genHtmlCartProd(raincoat) {
   //displayCartContainer
-  const divivi = document.createElement("div");
-  const randomText = document.createElement("p");
-  randomText.textContent = raincoat.price;
+  const singleCartCard = document.createElement("div");
+  singleCartCard.classList.add("single-cart-cart-cont");
+  const productImgsCont = document.createElement("div");
+  // productImgsCont.classList.add("check-outbox");
   const productImgs = document.createElement("img");
   productImgs.src = raincoat.image.url;
-  divivi.append(randomText, productImgs);
-  return divivi;
+  productImgs.classList.add("check-outbox");
+  //      product info
+  const singleCartInfo = document.createElement("div");
+  const singleCartProdTitle = document.createElement("p");
+  singleCartProdTitle.textContent = raincoat.title;
+  const singleCartProdPrice = document.createElement("p");
+  singleCartProdPrice.textContent = raincoat.price;
+  const singleCartProdQuantity = document.createElement("p");
+  singleCartProdQuantity.textContent = raincoat.quantity;
+  const singleCartProdPriceTotal = document.createElement("p");
+  singleCartProdPriceTotal.textContent = raincoat.price * raincoat.quantity;
+  productImgsCont.append(productImgs);
+  singleCartInfo.append(
+    singleCartProdTitle,
+    singleCartProdPrice,
+    singleCartProdQuantity,
+    singleCartProdPriceTotal
+  );
+  singleCartCard.append(productImgsCont, singleCartInfo);
+  return singleCartCard;
 }
 //
 //
@@ -39,8 +35,8 @@ function displayCartProd() {
   // if (!cart){
   //     return null ?or image empty card
   // }
-  cart.forEach((currentProd) => {
-    const cartCardhtml = genHtmlCartProd(currentProd);
+  cart.forEach((raincoat) => {
+    const cartCardhtml = genHtmlCartProd(raincoat);
     displayCartContainer.appendChild(cartCardhtml);
     console.log("cart", cart);
   });

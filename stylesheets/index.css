@@ -925,12 +925,17 @@ main {
 }
 
 /* test ------------------checkout */
-.check-outbox img {
+.check-outbox {
+  height: 200px;
+  width: auto;
+  padding: 1rem;
+  flex-wrap: wrap;
+}
+/* .check-outbox-img {
   height: 100px;
   width: auto;
-}
-
-.order-review {
+} */
+.ch .order-review {
   width: 40%;
   margin: 0 0 0 0;
   display: flex;
@@ -940,7 +945,11 @@ main {
 .order-review hr {
   width: 100%;
 }
-
+.single-cart-cart-cont {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
 /* .order-review hr:nth-last-of-type(1),
   .order-review hr:nth-last-of-type(2) {
       display: inline;
@@ -1650,6 +1659,9 @@ main {
   .hero-content > h1 {
     bottom: 10px;
     left: 10px;
+  }
+  .check-outbox {
+    height: 150px;
   }
 
   /* -------------------checkout pAge -------------------*/
