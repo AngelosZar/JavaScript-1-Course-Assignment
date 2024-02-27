@@ -4,7 +4,7 @@ import {
   getTheCart,
   emptyCart,
   addToCart,
-  //   removeFromCart,
+  deleteFromCart,
 } from "./cart.mjs";
 import { formatCurrency } from "./common.mjs";
 //
@@ -46,7 +46,8 @@ function genHtmlCartProd(raincoat) {
   decrease_btn.textContent = "-";
   decrease_btn.addEventListener("click", () => {
     console.log("decrease button");
-    // removeFromCart();
+    deleteFromCart(raincoat);
+    displayCartProd();
   });
 
   increace_decrease_div.append(increase_btn, decrease_btn);

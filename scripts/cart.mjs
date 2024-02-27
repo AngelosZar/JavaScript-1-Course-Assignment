@@ -1,14 +1,3 @@
-// Create a cart / local storage
-// function add to cart
-// function delete from cart
-// empty the cart
-// / creating cart component
-// \
-export function getTheCart() {
-  const cart = JSON.parse(localStorage.getItem("cart"));
-  return cart;
-}
-
 export function createCart() {
   // why not single quote//check if wrong
   // const cart = JSON.parse(localStorage.getItem("cart"));
@@ -19,9 +8,7 @@ export function createCart() {
   }
 }
 
-//
 export function addToCart(raincoat) {
-  //   const cart = getTheCart();
   console.log("added to cart", raincoat);
   const cart = JSON.parse(localStorage.getItem("cart"));
   const indexOfProd = cart.findIndex(function (currentProd) {
@@ -38,17 +25,32 @@ export function addToCart(raincoat) {
     cart[indexOfProd].quantity++;
   }
   console.log("indexOfProd", indexOfProd);
-  // cart.push(raincoat);
   localStorage.setItem("cart", JSON.stringify(cart));
-  //   console.log(cart);
 }
-//
-// export function removeFromCart(currentProd) {
-//   //   const cart = getTheCart();
-//   //   const cart = JSON.parse(localStorage.getItem("cart"));
-//   console.log("Removing from cart");
-//   console.log(currentProd);
-// }
+export function deleteFromCart(raincoat) {
+  let cart = JSON.parse(localStorage.getItem("cart"));
+  const prodIdToRemove = raincoat.id;
+
+  const idInCart = cart.findIndex((currentProduct) => {
+    if (currentProduct.id === prodIdToRemove) {
+      return true;
+    }
+    return false;
+  });
+
+  if (cart[idInCart].quantity > 1) {
+    cart[idInCart].quantity -= 1;
+    localStorage.setItem("cart", JSON.stringify(cart));
+  } else {
+    const newCart = cart.filter((_, index) => {
+      if (idInCart === index) {
+        return false;
+      }
+      return true;
+    });
+    localStorage.setItem("cart", JSON.stringify(newCart));
+  }
+}
 
 //
 export const emptyCart = function () {
