@@ -32,6 +32,7 @@ function genHtmlCartProd(raincoat) {
   increase_btn.addEventListener("click", () => {
     addToCart(raincoat);
     displayCartProd();
+    cartSum();
   });
   const decrease_btn = document.createElement("button");
   decrease_btn.textContent = "-";
@@ -39,6 +40,7 @@ function genHtmlCartProd(raincoat) {
     console.log("decrease button");
     deleteFromCart(raincoat);
     displayCartProd();
+    cartSum();
   });
 
   increace_decrease_div.append(increase_btn, decrease_btn);
@@ -56,17 +58,16 @@ function genHtmlCartProd(raincoat) {
 }
 //
 
-// const cartCalculations = document.querySelector("#cartCalculations");
+const cartCalculations = document.querySelector("#cartCalculations");
 const cartSubtotal = document.querySelector("#cart-subtotal");
-cartSubtotal.textContent = "subtotal yey";
 const cartTotal = document.querySelector("#cart-total");
-cartTotal.textContent = `TotalNumOfProdInCart`;
 const emptyCart_btn = document.querySelector("#empty-cart-btn");
 emptyCart_btn.addEventListener("click", () => {
   emptyCart();
+  // empty button is not refreshing ....
 });
-//
-function displayCartProd() {
+
+export function displayCartProd() {
   const displayCartContainer = document.querySelector("#cartCont");
   displayCartContainer.textContent = "";
   const cart = JSON.parse(localStorage.getItem("cart"));
@@ -84,15 +85,18 @@ function displayCartProd() {
 export function cartSum() {
   const cart = JSON.parse(localStorage.getItem("cart"));
   const TotalNumOfProdInCart = cart.reduce((total, product) => {
-    total += product.price + product.quantity;
+    total += product.price * product.quantity;
     console.log(total);
     return total;
   }, 0);
+  console.log(TotalNumOfProdInCart);
+  cartSubtotal.textContent = TotalNumOfProdInCart;
+  cartTotal.textContent = TotalNumOfProdInCart;
+  return TotalNumOfProdInCart;
 }
 
 function initCheckoutpage() {
   displayCartProd();
-  console.log("kinda working");
-  //   //   renderCart();
+  cartSum();
 }
 initCheckoutpage();

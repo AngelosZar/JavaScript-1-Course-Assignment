@@ -1,4 +1,4 @@
-import { cartSum } from "./checkoutPage.mjs";
+//  Create cart function
 export function createCart() {
   // why not single quote//check if wrong
   // const cart = JSON.parse(localStorage.getItem("cart"));
@@ -8,7 +8,7 @@ export function createCart() {
     localStorage.setItem("cart", JSON.stringify([]));
   }
 }
-
+// Add to cart function
 export function addToCart(raincoat) {
   console.log("added to cart", raincoat);
   const cart = JSON.parse(localStorage.getItem("cart"));
@@ -28,6 +28,7 @@ export function addToCart(raincoat) {
   console.log("indexOfProd", indexOfProd);
   localStorage.setItem("cart", JSON.stringify(cart));
 }
+// Delete from cart function
 export function deleteFromCart(raincoat) {
   let cart = JSON.parse(localStorage.getItem("cart"));
   const prodIdToRemove = raincoat.id;
@@ -52,7 +53,7 @@ export function deleteFromCart(raincoat) {
   }
 }
 
-//
+// Empty  cart function
 export const emptyCart = function () {
   localStorage.setItem("cart", JSON.stringify([]));
 };

@@ -13,9 +13,65 @@ import { addToCart } from "./cart.mjs";
 // empty the cart
 // Generate HTML /nest it in display html function
 //
-//         cart functions
 
-//         cart functions
+// filter products by three categories
+// 1. all products
+
+// 2. For him
+// 3. For Her
+
+// Filter Buttons
+let filteredGender = "";
+
+// test
+// 1. all products
+const allProductsFilter_btn = document.querySelector("#all-prod");
+allProductsFilter_btn.classList.add("primary-button");
+allProductsFilter_btn.addEventListener("click", () => {
+  //
+});
+
+// 2. For him
+const forHimProductsFilter_btn = document.querySelector("#for-him");
+forHimProductsFilter_btn.classList.add("primary-button");
+forHimProductsFilter_btn.addEventListener("click", () => {
+  let filteredGender = "Male";
+  gender: "Male";
+  console.log("Hemale");
+  renderHomePage;
+});
+
+// 3. For Her
+const forHerProductsFilter_btn = document.querySelector("#for-her");
+forHerProductsFilter_btn.classList.add("primary-button");
+forHerProductsFilter_btn.addEventListener("click", () => {
+  let filteredGender = "Female";
+  gender: "Female";
+  console.log("Female");
+  renderHomePage();
+  // displayRainCoatsLisTest();
+  // displayRainCoatsLisTest();
+});
+
+//  filtering function
+function displayRainCoatsLisTest(rainCoats) {
+  let filteredGender = "";
+  // const displayContainer = document.querySelector("#display-container");
+  const displayContainer = "";
+  rainCoats
+    .filter((raincoat) => {
+      if (raincoat.data.gender == filteredGender || "") {
+        return true;
+      }
+    })
+    .forEach((rainCoat) => {
+      const ProdHtml = genProdHtml(rainCoat);
+      displayContainer.appendChild(ProdHtml);
+    });
+}
+
+//        sum  cart functions
+//        sum  cart functions
 //
 function genProdHtml(raincoat) {
   //    ------- variables -------
@@ -62,6 +118,7 @@ function genProdHtml(raincoat) {
   prodCardContainer.append(productCard);
   return prodCardContainer;
 }
+//
 // Display html to the DOM
 function displayRainCoatsLi(rainCoats) {
   const displayContainer = document.querySelector("#display-container");
@@ -70,15 +127,9 @@ function displayRainCoatsLi(rainCoats) {
     displayContainer.appendChild(ProdHtml);
   });
 }
-
-// filter products by three categories
-// 1. all products
-// 2. For him
-// 3. For Her
-
-// Initialize the site
-async function initHomePage() {
-  createCart();
+//
+// Render homePage function
+async function renderHomePage() {
   try {
     const { data: rainCoats } = await doFetchData(rainyProdEndPoints);
     // const rainCoats = { data: rainCoats }.data;
@@ -88,4 +139,12 @@ async function initHomePage() {
     throw new Error(error);
   }
 }
+//
+// Initialize homePage function
+async function initHomePage() {
+  await renderHomePage();
+  createCart();
+}
+// Initialize the site
+//
 initHomePage();
