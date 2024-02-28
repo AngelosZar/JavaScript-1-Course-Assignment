@@ -26,14 +26,19 @@ function toFilterData(filteredData) {
     displayContainer.appendChild(ProdHtml);
   });
 }
-// 1. all products
+// 1. all products  not working
 const allProductsFilter_btn = document.querySelector("#all-prod");
 allProductsFilter_btn.classList.add("primary-button");
 allProductsFilter_btn.addEventListener("click", () => {
-  const container = document.querySelector("#display-container");
-  container.innerHTML = "";
-  const displayContainer = "";
-  displayRainCoatsLi();
+  async function rerender() {
+    // const { data: rainCoats } = await doFetchData(rainyProdEndPoints);
+    console.log("dksjbhkj");
+    // const container = document.querySelector("#display-container");
+    // container.innerHTML = "";
+    // const displayContainer = "";
+
+    //
+  }
 });
 
 // 2. For him
@@ -50,25 +55,7 @@ forHerProductsFilter_btn.addEventListener("click", () => {
   filteredGender("Female");
 });
 
-//  filtering function
-// function displayRainCoatsLisTest(rainCoats) {
-//   let filteredGender = "";
-//   // const displayContainer = document.querySelector("#display-container");
-//   const displayContainer = "";
-
-//   const itemsForHer = rainCoats.filter((raincoat) => {
-//     return raincoat.data.gender === "Female";
-//   });
-//   console.log(itemsForHer);
-//   // .forEach((rainCoat) => {
-//   //   const ProdHtml = genProdHtml(rainCoat);
-//   //   displayContainer.appendChild(ProdHtml);
-//   // });
-// }
-
-//        sum  cart functions
-//        sum  cart functions
-//
+// Generate html
 function genProdHtml(raincoat) {
   //    ------- variables -------
   // console.log(raincoat);
@@ -84,7 +71,6 @@ function genProdHtml(raincoat) {
   buyItem.classList.add("buyProdButton");
   buyItem.textContent = "Add to cart ";
   buyItem.addEventListener("click", () => {
-    // console.log("id", raincoat.id);
     addToCart(raincoat);
   });
   const productImg = document.createElement("img");
@@ -111,8 +97,8 @@ function genProdHtml(raincoat) {
   imgContForCard.append(productImg);
   textContainer.append(productTtl, productDescription, productPrice, buyItem);
   productCard.append(imgContForCard, textContainer);
-  prodCardContainer.append(productCard);
-  return prodCardContainer;
+  // prodCardContainer.append(productCard);
+  return productCard;
 }
 //
 // Display html to the DOM

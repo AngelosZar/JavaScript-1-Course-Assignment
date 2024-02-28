@@ -87,7 +87,7 @@ export function cartSum() {
   const TotalNumOfProdInCart = cart.reduce((total, product) => {
     total += product.price * product.quantity;
     console.log(total);
-    return total;
+    return formatCurrency(total);
   }, 0);
   console.log(TotalNumOfProdInCart);
   cartSubtotal.textContent = TotalNumOfProdInCart;
