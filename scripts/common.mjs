@@ -9,7 +9,7 @@ export const rainyProdEndPoints = `${baseApiUrl}/rainy-days`;
 export async function doFetchData(url) {
   try {
     const res = await axios.get(url);
-    console.log(res);
+    // console.log(res);
     // return res.data;
     return res;
   } catch (error) {

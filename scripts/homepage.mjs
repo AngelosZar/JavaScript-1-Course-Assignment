@@ -5,70 +5,66 @@ import { rainyProdEndPoints } from "./common.mjs";
 import { doFetchData } from "./common.mjs";
 import { createCart } from "./cart.mjs";
 import { addToCart } from "./cart.mjs";
-// Create html for product cards
-// Display the generated cards
-// Create a cart / local storage
-// function add to cart
-// function delete from cart
-// empty the cart
-// Generate HTML /nest it in display html function
-//
-
-// filter products by three categories
-// 1. all products
-
-// 2. For him
-// 3. For Her
 
 // Filter Buttons
-let filteredGender = "";
-
-// test
+//  Filter by gender
+async function filteredGender(gender) {
+  const { data: rainCoats } = await doFetchData(rainyProdEndPoints);
+  const container = document.querySelector("#display-container");
+  container.innerHTML = "";
+  const displayContainer = "";
+  const filteredData = rainCoats.data.filter((theGenderThing) => {
+    return theGenderThing.gender === gender;
+  });
+  toFilterData(filteredData);
+}
+//looping the data for function filteredGender
+function toFilterData(filteredData) {
+  const displayContainer = document.querySelector("#display-container");
+  filteredData.forEach((rainCoat) => {
+    const ProdHtml = genProdHtml(rainCoat);
+    displayContainer.appendChild(ProdHtml);
+  });
+}
 // 1. all products
 const allProductsFilter_btn = document.querySelector("#all-prod");
 allProductsFilter_btn.classList.add("primary-button");
 allProductsFilter_btn.addEventListener("click", () => {
-  //
+  const container = document.querySelector("#display-container");
+  container.innerHTML = "";
+  const displayContainer = "";
+  displayRainCoatsLi();
 });
 
 // 2. For him
 const forHimProductsFilter_btn = document.querySelector("#for-him");
 forHimProductsFilter_btn.classList.add("primary-button");
 forHimProductsFilter_btn.addEventListener("click", () => {
-  let filteredGender = "Male";
-  gender: "Male";
-  console.log("Hemale");
-  renderHomePage;
+  filteredGender("Male");
 });
 
 // 3. For Her
 const forHerProductsFilter_btn = document.querySelector("#for-her");
 forHerProductsFilter_btn.classList.add("primary-button");
 forHerProductsFilter_btn.addEventListener("click", () => {
-  let filteredGender = "Female";
-  gender: "Female";
-  console.log("Female");
-  renderHomePage();
-  // displayRainCoatsLisTest();
-  // displayRainCoatsLisTest();
+  filteredGender("Female");
 });
 
 //  filtering function
-function displayRainCoatsLisTest(rainCoats) {
-  let filteredGender = "";
-  // const displayContainer = document.querySelector("#display-container");
-  const displayContainer = "";
-  rainCoats
-    .filter((raincoat) => {
-      if (raincoat.data.gender == filteredGender || "") {
-        return true;
-      }
-    })
-    .forEach((rainCoat) => {
-      const ProdHtml = genProdHtml(rainCoat);
-      displayContainer.appendChild(ProdHtml);
-    });
-}
+// function displayRainCoatsLisTest(rainCoats) {
+//   let filteredGender = "";
+//   // const displayContainer = document.querySelector("#display-container");
+//   const displayContainer = "";
+
+//   const itemsForHer = rainCoats.filter((raincoat) => {
+//     return raincoat.data.gender === "Female";
+//   });
+//   console.log(itemsForHer);
+//   // .forEach((rainCoat) => {
+//   //   const ProdHtml = genProdHtml(rainCoat);
+//   //   displayContainer.appendChild(ProdHtml);
+//   // });
+// }
 
 //        sum  cart functions
 //        sum  cart functions
@@ -88,7 +84,7 @@ function genProdHtml(raincoat) {
   buyItem.classList.add("buyProdButton");
   buyItem.textContent = "Add to cart ";
   buyItem.addEventListener("click", () => {
-    console.log("id", raincoat.id);
+    // console.log("id", raincoat.id);
     addToCart(raincoat);
   });
   const productImg = document.createElement("img");
@@ -127,6 +123,7 @@ function displayRainCoatsLi(rainCoats) {
     displayContainer.appendChild(ProdHtml);
   });
 }
+
 //
 // Render homePage function
 async function renderHomePage() {
