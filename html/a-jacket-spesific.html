@@ -19,6 +19,9 @@
       src="https://kit.fontawesome.com/aea85badd7.js"
       crossorigin="anonymous"
     ></script>
+    <script type="module" src="../scripts/common.mjs"></script>
+    <script type="module" src="../scripts/cart.mjs"></script>
+    <script type="module" src="../scripts/singlePod.mjs"></script>
   </head>
 
   <body>
@@ -54,6 +57,7 @@
       </nav>
     </header>
     <main>
+      <!-- start render  here -->
       <div class="product-spec-container">
         <div class="card-image spes-pr-img">
           <img
@@ -61,9 +65,9 @@
             alt="the explorer jacket"
           />
         </div>
-        <div class="product-ttl">
+        <div class="product-ttl" id="product-ttl-spes">
           <h3>The explorer</h3>
-          <div class="product-txt spesific">
+          <div id="product-ttl-spes" class="product-txt spesific">
             With fully sealed seams, it’s durably waterproof, completely
             windproof, and highly breathable.
           </div>
@@ -132,7 +136,7 @@
           </div>
         </div>
       </div>
-
+      <!-- stop render  here -->
       <div class="frequently-bought-together">
         <div class="content-container recommended1">
           <div class="two-column">

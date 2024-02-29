@@ -6,7 +6,6 @@ import { doFetchData } from "./common.mjs";
 import { createCart } from "./cart.mjs";
 import { addToCart } from "./cart.mjs";
 
-// Filter Buttons
 //  Filter by gender
 async function filteredGender(gender) {
   const { data: rainCoats } = await doFetchData(rainyProdEndPoints);
@@ -60,10 +59,16 @@ forHerProductsFilter_btn.addEventListener("click", () => {
 // Generate html
 function genProdHtml(raincoat) {
   //    ------- variables -------
-  // console.log(raincoat);
+
   const prodCardContainer = document.createElement("div");
   const productCard = document.createElement("div");
   productCard.classList.add("card");
+  // event Listener to redirect the page test
+  // productCard.addEventListener("click", function (p) {
+  //   p.preventDefault();
+  //   saveInfoForCard(raincoat);
+  // });
+  // event Listener to redirect the page test
   const imgContForCard = document.createElement("div");
   const textContainer = document.createElement("div");
   const productTtl = document.createElement("p");
@@ -106,6 +111,30 @@ function genProdHtml(raincoat) {
   // prodCardContainer.append(productCard);
   return productCard;
 }
+//test
+// rename to SeeProductSpecific
+function saveInfoForCard(raincoat) {
+  // raincoat.preventDefault();
+  console.log(raincoat.title);
+  const productTtlSpes = raincoat.title;
+  console.log(raincoat.title);
+  const productImgSpes = raincoat.image.url;
+  const productPriceSpes = raincoat.price;
+  const productIdSpes = raincoat.id;
+  localStorage.setItem(
+    "singleProduct",
+    JSON.stringify({
+      title: productTtlSpes,
+      productPriceSpes,
+      productIdSpes,
+      productImgSpes,
+    })
+  );
+  location.href = "a-jacket-spesific";
+  console.log("dabababa");
+}
+// test
+// Filter Buttons
 //
 // Display html to the DOM
 function displayRainCoatsLi(rainCoats) {
@@ -113,6 +142,10 @@ function displayRainCoatsLi(rainCoats) {
   rainCoats.data.forEach((rainCoat) => {
     const ProdHtml = genProdHtml(rainCoat);
     displayContainer.appendChild(ProdHtml);
+    // productCard.addEventListener("click", function (p) {
+    //   p.preventDefault();
+    //   saveInfoForCard(raincoat);
+    // });
   });
 }
 
