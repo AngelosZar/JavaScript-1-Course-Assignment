@@ -234,15 +234,12 @@ fieldset {
 .card-image {
   max-width: 230px;
   height: auto;
-  /* box-sizing: border-box; */
-  /* display: flex;
-      flex-flow: row nowrap;
-      align-items: center; */
 }
 
 .card-image > img {
   object-fit: contain;
   max-width: 230px;
+  height: auto;
 }
 
 .card-text-field {
@@ -564,7 +561,13 @@ footer {
 .delivery-logos img {
   margin-left: 30px;
 }
-
+#display-container {
+  display: flex;
+  max-width: var(--body-width);
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 /* ------------------------------------ ** rain quote and image section ** ----------------- */
 
 blockquote {

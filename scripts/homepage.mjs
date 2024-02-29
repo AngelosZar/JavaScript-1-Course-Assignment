@@ -26,19 +26,21 @@ function toFilterData(filteredData) {
     displayContainer.appendChild(ProdHtml);
   });
 }
-// 1. all products  not working
+// Filter all data again
+async function filteredAllGender() {
+  const { data: rainCoats } = await doFetchData(rainyProdEndPoints);
+  const container = document.querySelector("#display-container");
+  container.innerHTML = "";
+  const displayContainer = "";
+  const filteredData = rainCoats.data;
+  toFilterData(filteredData);
+}
+
+// 1. all products
 const allProductsFilter_btn = document.querySelector("#all-prod");
 allProductsFilter_btn.classList.add("primary-button");
 allProductsFilter_btn.addEventListener("click", () => {
-  async function rerender() {
-    // const { data: rainCoats } = await doFetchData(rainyProdEndPoints);
-    console.log("dksjbhkj");
-    // const container = document.querySelector("#display-container");
-    // container.innerHTML = "";
-    // const displayContainer = "";
-
-    //
-  }
+  filteredAllGender();
 });
 
 // 2. For him
@@ -61,11 +63,15 @@ function genProdHtml(raincoat) {
   // console.log(raincoat);
   const prodCardContainer = document.createElement("div");
   const productCard = document.createElement("div");
+  productCard.classList.add("card");
   const imgContForCard = document.createElement("div");
   const textContainer = document.createElement("div");
   const productTtl = document.createElement("p");
+  productTtl.style.fontSize = "1.8rem";
+  productTtl.style.margin = "10px";
   const productDescription = document.createElement("p");
   const productPrice = document.createElement("p");
+  productPrice.style.margin = "10px";
   //    ------- button add to cart -------
   const buyItem = document.createElement("button");
   buyItem.classList.add("buyProdButton");

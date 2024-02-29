@@ -22,9 +22,10 @@ function genHtmlCartProd(raincoat) {
   const singleCartProdQuantity = document.createElement("p");
   singleCartProdQuantity.textContent = `${raincoat.quantity} Items`;
   const singleCartProdPriceTotal = document.createElement("p");
-  singleCartProdPriceTotal.textContent = `Total ${formatCurrency(
+  // formatCurrency not working??
+  singleCartProdPriceTotal.textContent = `Total ${
     raincoat.price * raincoat.quantity
-  )}`;
+  }`;
   //    increase and decrease buttons
   const increace_decrease_div = document.createElement("div");
   const increase_btn = document.createElement("button");
@@ -87,7 +88,8 @@ export function cartSum() {
   const TotalNumOfProdInCart = cart.reduce((total, product) => {
     total += product.price * product.quantity;
     console.log(total);
-    return formatCurrency(total);
+    // return formatCurrency(total);
+    return total;
   }, 0);
   console.log(TotalNumOfProdInCart);
   cartSubtotal.textContent = TotalNumOfProdInCart;
