@@ -11,6 +11,8 @@ export function createCart() {
 // Add to cart function
 export function addToCart(raincoat) {
   console.log("added to cart", raincoat);
+  // raincoat.stopPropagation();
+  // raincoat.preventDefault();
   const cart = JSON.parse(localStorage.getItem("cart"));
   const indexOfProd = cart.findIndex(function (currentProd) {
     console.log("currentProd");

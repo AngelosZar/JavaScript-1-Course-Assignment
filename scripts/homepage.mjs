@@ -81,11 +81,18 @@ function genProdHtml(raincoat) {
   const buyItem = document.createElement("button");
   buyItem.classList.add("buyProdButton");
   buyItem.textContent = "Add to cart ";
-  buyItem.addEventListener("click", () => {
+  buyItem.addEventListener("click", (button) => {
     addToCart(raincoat);
+    // How to stop propogation
+    button.stopImmediatePropagation();
   });
   const productImg = document.createElement("img");
   productImg.src = raincoat.image.url;
+  productImg.classList.add();
+  //
+  // object-fit: contain;
+  //   max-width: 200px;
+  // productImg.style.objectFit = contain;
   //       ------- declaration from api -------
   productTtl.textContent = raincoat.title;
   productDescription.textContent = raincoat.description;
