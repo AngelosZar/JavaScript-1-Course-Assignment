@@ -85,14 +85,10 @@ function genProdHtml(raincoat) {
     addToCart(raincoat);
   });
   const productImg = document.createElement("img");
-  // how to get the image????
   productImg.src = raincoat.image.url;
-  // productImg.src = raincoat.image.url;
   //       ------- declaration from api -------
-  // delete the Rainy days from the title
   productTtl.textContent = raincoat.title;
   productDescription.textContent = raincoat.description;
-  // Change the int of price to num
   productPrice.textContent = raincoat.price;
   //       ------- styles/classes and ids -------
   prodCardContainer.classList.add("#content-container");
@@ -103,16 +99,13 @@ function genProdHtml(raincoat) {
   productTtl.classList.add("product-ttl");
   productPrice.classList.add("product-price");
   //       ------- append and return -------
-
-  // if appending is correct like nesting on the original html?
   imgContForCard.append(productImg);
   textContainer.append(productTtl, productDescription, productPrice, buyItem);
   productCard.append(imgContForCard, textContainer);
-  // prodCardContainer.append(productCard);
   return productCard;
 }
 //test
-// rename to SeeProductSpecific
+// Function to get the specific product
 function SeeProductSpecific(raincoat) {
   // raincoat.preventDefault();
   const productTtlSpes = raincoat.title;
@@ -131,11 +124,8 @@ function SeeProductSpecific(raincoat) {
     })
   );
   location.href = "/html/a-jacket-spesific.html";
-  console.log("dabababa");
 }
-// test
-// Filter Buttons
-//
+
 // Display html to the DOM
 function displayRainCoatsLi(rainCoats) {
   const displayContainer = document.querySelector("#display-container");

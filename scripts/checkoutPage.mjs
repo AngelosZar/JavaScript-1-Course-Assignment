@@ -3,6 +3,11 @@ import { createCart, emptyCart, addToCart, deleteFromCart } from "./cart.mjs";
 import { formatCurrency } from "./common.mjs";
 //
 
+//Function to get the user to checkout success
+const payOutBtn = document.querySelector("#payOutBtn");
+payOutBtn.addEventListener("click", () => {
+  location.href = "/html/html/checkout-success.html";
+});
 //
 function genHtmlCartProd(raincoat) {
   //displayCartContainer

@@ -56,4 +56,5 @@ export function deleteFromCart(raincoat) {
 // Empty  cart function
 export const emptyCart = function () {
   localStorage.setItem("cart", JSON.stringify([]));
+  location.reload();
 };
