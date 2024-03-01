@@ -64,10 +64,10 @@ function genProdHtml(raincoat) {
   const productCard = document.createElement("div");
   productCard.classList.add("card");
   // event Listener to redirect the page test
-  // productCard.addEventListener("click", function (p) {
-  //   p.preventDefault();
-  //   saveInfoForCard(raincoat);
-  // });
+  productCard.addEventListener("click", function (p) {
+    p.preventDefault();
+    SeeProductSpecific(raincoat);
+  });
   // event Listener to redirect the page test
   const imgContForCard = document.createElement("div");
   const textContainer = document.createElement("div");
@@ -113,14 +113,13 @@ function genProdHtml(raincoat) {
 }
 //test
 // rename to SeeProductSpecific
-function saveInfoForCard(raincoat) {
+function SeeProductSpecific(raincoat) {
   // raincoat.preventDefault();
-  console.log(raincoat.title);
   const productTtlSpes = raincoat.title;
-  console.log(raincoat.title);
   const productImgSpes = raincoat.image.url;
   const productPriceSpes = raincoat.price;
   const productIdSpes = raincoat.id;
+  const productDescription = raincoat.description;
   localStorage.setItem(
     "singleProduct",
     JSON.stringify({
@@ -128,9 +127,10 @@ function saveInfoForCard(raincoat) {
       productPriceSpes,
       productIdSpes,
       productImgSpes,
+      productDescription,
     })
   );
-  location.href = "a-jacket-spesific";
+  location.href = "/html/a-jacket-spesific.html";
   console.log("dabababa");
 }
 // test
