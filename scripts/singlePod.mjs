@@ -75,31 +75,24 @@ function generateSingleCardHtml(singleProductView) {
           </select>
         </form>
       </div>
-      <form action="selected-size-add-2cart" method="post">
-      // fix me  fix me  fix me  fix me  fix me fix me  fix me  fix me  fix me fix me
         <button
-          type="button"
-          // fix me  fix me  fix me  fix me  fix me fix me  fix me  fix me  fix me fix me
-          (onclick = "addtocart()"
+          onclick = "addtocart()"
           class="primary-button"
           id="add-to-cart-btn">
           Add to cart
         </button>
-      </form>
   </div>
 </div>`;
   // test 1
-  const buttonCart = document.querySelector("#add-to-cart-btn");
-
-  buttonCart.addEventListener("click", addToCart);
 
   // test 2
   // buttonCart.addEventListener("click", addToCart());
-
   //  good here
   prodOverwiew.innerHTML = prodCard;
   console.log("display function is ok");
   console.log(singleProductView);
+  const buttonCart = document.querySelector("#add-to-cart-btn");
+  buttonCart.addEventListener("click", addToCart(singleProductView));
 }
 displaySingleProduct();
 
