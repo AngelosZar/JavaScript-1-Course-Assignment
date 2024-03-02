@@ -2,9 +2,9 @@ import { addToCart } from "./cart.mjs";
 
 const singleProductView = JSON.parse(localStorage.getItem("singleProduct"));
 console.log(singleProductView);
-//
-//
-//
+// //
+// //
+// //
 function displaySingleProduct() {
   const productWraper = document.querySelector(".product-spec-container");
   const singleProdCard = generateSingleCardHtml(singleProductView);
@@ -14,7 +14,8 @@ function displaySingleProduct() {
 // displaySingleProduct(singleProductView);
 function generateSingleCardHtml(singleProductView) {
   const prodOverwiew = document.querySelector(".product-spec-container");
-  const prodCard = `<div class="card-image">
+  const prodCard = `
+  <div class="card-image">
   <img class="spes-pr-img" src="${singleProductView.productImgSpes}" alt="" />
 </div>
 <div id="product-ttl-spes">
@@ -76,7 +77,7 @@ function generateSingleCardHtml(singleProductView) {
       </div>
       <form action="selected-size-add-2cart" method="post">
       // fix me  fix me  fix me  fix me  fix me fix me  fix me  fix me  fix me fix me
-        <button 
+        <button
           type="button"
           // fix me  fix me  fix me  fix me  fix me fix me  fix me  fix me  fix me fix me
           (onclick = "addtocart()"
@@ -88,8 +89,9 @@ function generateSingleCardHtml(singleProductView) {
   </div>
 </div>`;
   // test 1
-  // const buttonCart = document.querySelector("#add-to-cart-btn");
-  // buttonCart.addEventListener("click", addToCart);
+  const buttonCart = document.querySelector("#add-to-cart-btn");
+
+  buttonCart.addEventListener("click", addToCart);
 
   // test 2
   // buttonCart.addEventListener("click", addToCart());
@@ -100,3 +102,15 @@ function generateSingleCardHtml(singleProductView) {
   console.log(singleProductView);
 }
 displaySingleProduct();
+
+// <form action="selected-size-add-2cart" method="post">
+// // fix me  fix me  fix me  fix me  fix me fix me  fix me  fix me  fix me fix me
+//   <button
+//     type="button"
+//     // fix me  fix me  fix me  fix me  fix me fix me  fix me  fix me  fix me fix me
+//     (onclick = "addtocart()"
+//     class="primary-button"
+//     id="add-to-cart-btn">
+//     Add to cart
+//   </button>
+// </form>
