@@ -60,12 +60,13 @@
       <!-- start render  here -->
 
       <div class="product-spec-container">
-        <!-- <div class="card-image">
+        <div class="card-image">
           <img class="spes-pr-img" src="" alt="" />
         </div>
         <div id="product-ttl-spes">
           <h3 class="product-ttl-single"></h3>
           <div id="product-ttl-spes" class="product-txt spesific"></div>
+          <!-- try to render from here -->
           <div class="material-logos">
             <ul>
               <li>
@@ -99,50 +100,36 @@
                 />
               </li>
             </ul>
-            <div class="prod-info-spes">
-              <h6 id="product-specific-price"></h6>
-              <p class="red-text">Only a few items left</p>
-              <div>
-                <form action="selected-prod-size" method="post">
-                  <select
-                    name="product-size"
-                    id="product-size"
-                    class="primary-button"
-                  >
-                    <div class="size-selector">
-                      <option value="product-size">Select Size</option>
-                      <option value="product-size">X-Small</option>
-                      <option value="product-size">Small</option>
-                      <option value="product-size">Medium</option>
-                      <option value="product-size">Large</option>
-                      <option value="product-size">X-Large</option>
-                    </div>
-                  </select>
-                </form>
-              </div>
-            </div>
-            <a href="../html.files/checkout-page.html">
-              <form action="selected-size-add-2cart" method="post">
-                <button
-                  onclick="addtocart()"
-                  type="button"
-                  class="primary-button"
-                  id="add-to-cart-btn"
-                >
-                  Add to cart
-                </button>
-              </form>
-            </a>
           </div>
-        </div> -->
-        <button
-        type="button"
-        class="primary-button"
-        id="add-to-cart-btn"
-      >
-        Add to cart
-      </button>
-    </form>
+          <div class="prod-info-spes">
+            <h6 id="product-specific-price"></h6>
+            <p class="red-text">Only a few items left</p>
+            <div>
+              <form action="selected-prod-size" method="post">
+                <select
+                  name="product-size"
+                  id="product-size"
+                  class="primary-button"
+                >
+                  <div class="size-selector">
+                    <option value="product-size">Select Size</option>
+                    <option value="product-size">X-Small</option>
+                    <option value="product-size">Small</option>
+                    <option value="product-size">Medium</option>
+                    <option value="product-size">Large</option>
+                    <option value="product-size">X-Large</option>
+                  </div>
+                </select>
+              </form>
+            </div>
+          </div>
+          <!-- try to stop render right here -->
+          <div>
+            <button type="button" class="primary-button" id="add-to-cart-btn">
+              Add to cart
+            </button>
+          </div>
+        </div>
       </div>
 
       <!-- stop render  here -->

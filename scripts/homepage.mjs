@@ -62,13 +62,15 @@ function genProdHtml(raincoat) {
 
   const prodCardContainer = document.createElement("div");
   const productCard = document.createElement("div");
-  productCard.classList.add("card");
+  // productCard.classList.add("card");
+  //
   // event Listener to redirect the page test
   productCard.addEventListener("click", function (p) {
-    p.preventDefault();
-    SeeProductSpecific(raincoat);
+    // p.preventDefault();
+    // SeeProductSpecific(raincoat);
   });
   // event Listener to redirect the page test
+  //
   const imgContForCard = document.createElement("div");
   const textContainer = document.createElement("div");
   const productTtl = document.createElement("p");
@@ -84,7 +86,7 @@ function genProdHtml(raincoat) {
   buyItem.addEventListener("click", (button) => {
     addToCart(raincoat);
     // How to stop propogation
-    button.stopImmediatePropagation();
+    // button.stopImmediatePropagation();
   });
   const productImg = document.createElement("img");
   productImg.src = raincoat.image.url;
@@ -113,25 +115,29 @@ function genProdHtml(raincoat) {
 }
 //test
 // Function to get the specific product
-function SeeProductSpecific(raincoat) {
-  // raincoat.preventDefault();
-  const productTtlSpes = raincoat.title;
-  const productImgSpes = raincoat.image.url;
-  const productPriceSpes = raincoat.price;
-  const productIdSpes = raincoat.id;
-  const productDescription = raincoat.description;
-  localStorage.setItem(
-    "singleProduct",
-    JSON.stringify({
-      title: productTtlSpes,
-      productPriceSpes,
-      productIdSpes,
-      productImgSpes,
-      productDescription,
-    })
-  );
-  location.href = "/html/a-jacket-spesific.html";
-}
+// export function SeeProductSpecific(raincoat) {
+// raincoat.preventDefault();
+// const productTtlSpes = raincoat.title;
+// const productImgSpes = raincoat.image.url;
+// const productPriceSpes = raincoat.price;
+// const productIdSpes = raincoat.id;
+// const productDescription = raincoat.description;
+// localStorage.setItem(
+//   "singleProduct",
+//   JSON.stringify({
+//     title: productTtlSpes,
+//     productPriceSpes,
+//     productIdSpes,
+//     productImgSpes,
+//     productDescription,
+//   })
+// );
+//
+// localStorage.setItem("productSpecific", JSON.stringify(raincoat));
+// console.log("product added");
+// console.log(raincoat);
+// location.href = "/html/a-jacket-spesific.html";
+// }
 
 // Display html to the DOM
 function displayRainCoatsLi(rainCoats) {
