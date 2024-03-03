@@ -67,7 +67,7 @@ function genProdHtml(raincoat) {
   // event Listener to redirect the page test
   productCard.addEventListener("click", function (p) {
     // p.preventDefault();
-    // SeeProductSpecific(raincoat);
+    SeeProductSpecific(raincoat);
   });
   // event Listener to redirect the page test
   //
@@ -86,7 +86,7 @@ function genProdHtml(raincoat) {
   buyItem.addEventListener("click", (button) => {
     addToCart(raincoat);
     // How to stop propogation
-    // button.stopImmediatePropagation();
+    button.stopImmediatePropagation();
   });
   const productImg = document.createElement("img");
   productImg.src = raincoat.image.url;
@@ -98,7 +98,7 @@ function genProdHtml(raincoat) {
   //       ------- declaration from api -------
   productTtl.textContent = raincoat.title;
   productDescription.textContent = raincoat.description;
-  productPrice.textContent = raincoat.price;
+  productPrice.textContent = `${raincoat.price} Kr`;
   //       ------- styles/classes and ids -------
   prodCardContainer.classList.add("#content-container");
   productCard.classList.add("card");
@@ -115,29 +115,29 @@ function genProdHtml(raincoat) {
 }
 //test
 // Function to get the specific product
-// export function SeeProductSpecific(raincoat) {
-// raincoat.preventDefault();
-// const productTtlSpes = raincoat.title;
-// const productImgSpes = raincoat.image.url;
-// const productPriceSpes = raincoat.price;
-// const productIdSpes = raincoat.id;
-// const productDescription = raincoat.description;
-// localStorage.setItem(
-//   "singleProduct",
-//   JSON.stringify({
-//     title: productTtlSpes,
-//     productPriceSpes,
-//     productIdSpes,
-//     productImgSpes,
-//     productDescription,
-//   })
-// );
-//
-// localStorage.setItem("productSpecific", JSON.stringify(raincoat));
-// console.log("product added");
-// console.log(raincoat);
-// location.href = "/html/a-jacket-spesific.html";
-// }
+export function SeeProductSpecific(raincoat) {
+  // raincoat.preventDefault();
+  // const productTtlSpes = raincoat.title;
+  // const productImgSpes = raincoat.image.url;
+  // const productPriceSpes = raincoat.price;
+  // const productIdSpes = raincoat.id;
+  // const productDescription = raincoat.description;
+  // localStorage.setItem(
+  //   "singleProduct",
+  //   JSON.stringify({
+  //     title: productTtlSpes,
+  //     productPriceSpes,
+  //     productIdSpes,
+  //     productImgSpes,
+  //     productDescription,
+  //   })
+  // );
+  //
+  localStorage.setItem("productSpecific", JSON.stringify(raincoat));
+  console.log("product added");
+  console.log(raincoat);
+  location.href = "/html/a-jacket-spesific.html";
+}
 
 // Display html to the DOM
 function displayRainCoatsLi(rainCoats) {
