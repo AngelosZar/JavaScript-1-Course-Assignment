@@ -1,13 +1,6 @@
 import { addToCart } from "./cart.mjs";
-// import { SeeProductSpecific } from "./homepage.mjs";
 const singleProduct = JSON.parse(localStorage.getItem("productSpecific"));
-console.log(singleProduct);
-console.log(singleProduct);
-// //
-// //
-// //
-// const addToCartBtn = document.querySelector("#add-to-cart-btn");
-// addToCartBtn.addEventListener("click", addToCart("singleProduct"));
+
 function genHtmlSingleProd(singleProduct) {
   const productSpecContainer = document.querySelector("product-spec-container");
   const spesPrImg = document.querySelector(".spes-pr-img");
@@ -28,14 +21,3 @@ function genHtmlSingleProd(singleProduct) {
   });
 }
 genHtmlSingleProd(singleProduct);
-// function displayRainCoatsLi(rainCoats) {
-//   // const displayContainer = document.querySelector("#display-container");
-//   // rainCoats.data.forEach((rainCoat) => {
-//   //   const ProdHtml = genProdHtml(rainCoat);
-//   //   displayContainer.appendChild(ProdHtml);
-// }
-
-// add to generate
-
-// // append here if needed
-// productSpecContainer.append();

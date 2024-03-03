@@ -1,21 +1,14 @@
 //  Create cart function
 export function createCart() {
-  // why not single quote//check if wrong
-  // const cart = JSON.parse(localStorage.getItem("cart"));
   const cart = localStorage.getItem("cart");
-  // console.log("cart", cart);
   if (!cart) {
     localStorage.setItem("cart", JSON.stringify([]));
   }
 }
 // Add to cart function
 export function addToCart(raincoat) {
-  console.log("added to cart", raincoat);
-  // raincoat.stopPropagation();
-  // raincoat.preventDefault();
   const cart = JSON.parse(localStorage.getItem("cart"));
   const indexOfProd = cart.findIndex(function (currentProd) {
-    console.log("currentProd");
     if (raincoat.id === currentProd.id) {
       return true;
     } else {
@@ -27,7 +20,6 @@ export function addToCart(raincoat) {
   } else {
     cart[indexOfProd].quantity++;
   }
-  console.log("indexOfProd", indexOfProd);
   localStorage.setItem("cart", JSON.stringify(cart));
 }
 // Delete from cart function
@@ -54,7 +46,6 @@ export function deleteFromCart(raincoat) {
     localStorage.setItem("cart", JSON.stringify(newCart));
   }
 }
-
 // Empty  cart function
 export const emptyCart = function () {
   localStorage.setItem("cart", JSON.stringify([]));
