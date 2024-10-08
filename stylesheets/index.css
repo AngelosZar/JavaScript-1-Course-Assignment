@@ -2,8 +2,8 @@
 ----------------------------------------------------- */
 :root {
   /* fonts---both from google but with safe fonds /////adjust sizes afterwards*/
-  --body-font: "Roboto", Verdana, Geneva, Tahoma, sans-serif;
-  --2nd-font: "Outfit", Tahoma, sans-serif;
+  --body-font: 'Roboto', Verdana, Geneva, Tahoma, sans-serif;
+  --2nd-font: 'Outfit', Tahoma, sans-serif;
   /*Text colors */
   --text-dark: #000;
   --text-white: #fff;
@@ -118,7 +118,7 @@ h6 {
 p {
   font-size: 1.8rem;
   font-weight: 400;
-  margin: var var(--spacing-md 0);
+  margin: var(--spacing-md) 0;
 }
 
 hr {
@@ -423,7 +423,7 @@ nav ul {
 
 .fa-bars:before,
 .fa-navicon:before {
-  content: "\f0c9";
+  content: '\f0c9';
   display: none;
 }
 
@@ -702,7 +702,7 @@ p.reviewer-name {
 }
 
 .about-us-container::before {
-  content: "";
+  content: '';
   background-image: url(../imgs/adam-bixby-Kkyq3sRX9pk-unsplash.jpg);
   background-size: cover;
   position: absolute;
@@ -1092,7 +1092,7 @@ main {
 }
 
 .check-out-page::before {
-  content: "";
+  content: '';
   background-image: url(../imgs/eberhard-grossgasteiger-YV_gbygzlWk-unsplash.HD.jpg);
   /* maybe an another image 
       or the picture not to cover all body but just main  */
@@ -1408,7 +1408,7 @@ main {
   /*  */
   .fa-bars:before,
   .fa-navicon:before {
-    content: "\f0c9";
+    content: '\f0c9';
     display: block;
   }
 

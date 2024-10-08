@@ -1,0 +1,14 @@
+{
+  "name": "javascript-1-course-assignment",
+  "version": "1.0.0",
+  "description": "Rainy days is a is an interactive static web-site that has been built with HTML and CSS based on a fictional client. The luck of javascript use is intentional and all interactivity is mimicked with css.",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "author": "Angelos.Z",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.12.0"
+  }
+}
