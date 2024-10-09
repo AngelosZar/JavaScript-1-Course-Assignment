@@ -17,7 +17,6 @@ export async function doFetchData(url) {
 }
 export function formatCurrency(amount) {
   if (typeof amount !== 'number' || isNaN(amount)) {
-    // throw new Error('Amount must be a number');
     throw new Error('Amount must be a number');
   }
   return `${amount.toFixed(2)}`;
