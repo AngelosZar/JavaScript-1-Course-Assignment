@@ -1,6 +1,6 @@
-"use strict";
+'use strict';
 //                 .....   variables ......
-export const baseApiUrl = "https://v2.api.noroff.dev";
+export const baseApiUrl = 'https://v2.api.noroff.dev';
 // export const someIdToFetch = `${""}`;
 export const rainyProdEndPoints = `${baseApiUrl}/rainy-days`;
 // with template for url//need to create constants/vars
@@ -16,5 +16,9 @@ export async function doFetchData(url) {
   }
 }
 export function formatCurrency(amount) {
+  if (typeof amount !== 'number' || isNaN(amount)) {
+    // throw new Error('Amount must be a number');
+    throw new Error('Amount must be a number');
+  }
   return `${amount.toFixed(2)}`;
 }
